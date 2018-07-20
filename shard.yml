@@ -1,0 +1,12 @@
+name: solon
+version: 0.0.1
+
+authors:
+  - Daniël de Vries <daniel@ivaldi.nl>
+
+description: |
+  Authorization through simple Crystal objects
+
+crystal: 0.25.1
+
+license: MIT
