@@ -1,4 +1,4 @@
-# Solon ![Build Status](https://travis-ci.org/danieldevries/solon.svg?branch=master)](https://travis-ci.org/danieldevries/solon)
+# Solon [![Build Status](https://travis-ci.org/danieldevries/solon.svg?branch=master)](https://travis-ci.org/danieldevries/solon)
 
 Authorization through objects in [Crystal](https://github.com/crystal-lang/crystal), designed to work with [Amber](https://github.com/amberframework/amber) but can be used in any application.
 
