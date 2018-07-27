@@ -3,7 +3,7 @@ require "./solon/*"
 module Solon
   def self.authorize(user, record, query)
     policy = self.policy(user, record)
-    raise NotAuthorizedError.new(query, record) unless policy.can?(query)
+    return false unless policy.can?(query)
     record
   end
 
@@ -11,6 +11,11 @@ module Solon
     klass = Solon::PolicyRegistery.find(record.class.to_s)
     raise UnknownPolicyError.new(user) if klass.nil?
     klass.new(user, record)
+  end
+
+  def self.authorize!(user, record, query)
+    raise NotAuthorizedError.new(query, record) unless Solon.authorize(user, record, query)
+    record
   end
 
   class NotAuthorizedError < Exception
