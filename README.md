@@ -1,8 +1,8 @@
-# Solon
+# Solon ![Build Status](https://travis-ci.org/danieldevries/solon.svg?branch=master)](https://travis-ci.org/danieldevries/solon)
 
-Simple authorization through objects.
+Authorization through objects in [Crystal](https://github.com/crystal-lang/crystal), designed to work with [Amber](https://github.com/amberframework/amber) but can be used in any application.
 
-Still in alpha.
+Currently in alpha.
 
 ## Installation
 
@@ -16,30 +16,11 @@ dependencies:
 
 ## Usage
 
-```crystal
-require "solon"
-
-class PostPolicy < Solon::Policy
-  register User, Post
-
-  def update?
-    @user.admin? || !@record.draft?
-  end
-
-  def destroy?
-    @user.admin?
-  end
-end
-
-# returns post if successful or raises exception if not
-Solon.authorize(user, post, "update?")
-```
-
-## Development
-
-TODO: Write development instructions here
+See [getting started](https://github.com/danieldevries/solon/wiki/Getting-started-(Amber)).
 
 ## Contributing
+
+Any suggestions or feature requests are welcome, if you have anything you can create a GitHub issue.
 
 1. Fork it (<https://github.com/danieldevries/solon/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
